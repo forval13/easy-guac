@@ -11,5 +11,5 @@ cd easy-guac
 docker compose up -d
 ~~~
 
-Guacamole server should now be available at `https://server:8443/`. 
+Connect Guacamole server: `https://server:8443/`. 
 The default username is `guacadmin` with password `guacadmin`.
