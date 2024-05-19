@@ -1,5 +1,5 @@
 ## Easy-guac
-Quick deployment of Apache Guacamole using Docker images.
+Quick deployment of Apache Guacamole using Docker images.  
 Use methoods from https://github.com/boschkundendienst/guacamole-docker-compose.
 
 ## Quick start
