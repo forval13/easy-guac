@@ -7,7 +7,7 @@ Based on the methods of https://github.com/boschkundendienst/guacamole-docker-co
 Clone the GIT repository and start guacamole:
 
 ~~~bash
-git clone "https://github.com/boschkundendienst/guacamole-docker-compose.git"
+git clone "https://github.com/forval13/easy-guac.git"
 cd guacamole-docker-compose
 ./prepare.sh
 docker-compose up -d
