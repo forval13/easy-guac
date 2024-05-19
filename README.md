@@ -10,7 +10,8 @@ Clone the GIT repository and start guacamole:
 git clone "https://github.com/forval13/easy-guac.git"
 cd guacamole-docker-compose
 ./prepare.sh
-docker-compose up -d
+docker compose up -d
 ~~~
 
-Your guacamole server should now be available at `https://ip of your server:8443/`. The default username is `guacadmin` with password `guacadmin`.
+Your guacamole server should now be available at `https://ip of your server:8443/`.  
+The default username is `guacadmin` with password `guacadmin`.
