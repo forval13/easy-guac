@@ -1,4 +1,4 @@
-#!/bin/sh
+t#!/bin/sh
 #
 # check if docker is running
 if ! (docker ps >/dev/null 2>&1)
@@ -18,4 +18,4 @@ echo "You can use your own certificates by placing the private key in nginx/ssl/
 echo "preparation done"
 echo "start composing..."
 docker compose up -d
-echo "Try https://this_server_ip:8443/. The default username is guacadmin with password guacadmin."
+echo "Try connect https://server:8443/. The default username is guacadmin with password guacadmin."
