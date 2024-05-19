@@ -11,5 +11,5 @@ cd easy-guac
 ./start.sh
 ~~~
 
-Try connect guacamole server: `https://server:8443/`. 
+Try connect guacamole server: `https://server:8443/`.  
 The default username is `guacadmin` with password `guacadmin`.
