@@ -1,4 +1,4 @@
-t#!/bin/sh
+#!/bin/sh
 #
 # check if docker is running
 if ! (docker ps >/dev/null 2>&1)
