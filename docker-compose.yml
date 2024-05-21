@@ -1,17 +1,3 @@
-####################################################################################
-# docker-compose file for Apache Guacamole
-# created by PCFreak 2017-06-28
-#
-# Apache Guacamole is a clientless remote desktop gateway. It supports standard
-# protocols like VNC, RDP, and SSH. We call it clientless because no plugins or
-# client software are required. Thanks to HTML5, once Guacamole is installed on
-# a server, all you need to access your desktops is a web browser.
-####################################################################################
-#
-# What does this file do?
-#
-# Using docker-compose it will:
-#
 # - create a network 'guacnetwork_compose' with the 'bridge' driver.
 # - create a service 'guacd_compose' from 'guacamole/guacd' connected to 'guacnetwork'
 # - create a service 'postgres_guacamole_compose' (1) from 'postgres' connected to 'guacnetwork'
@@ -73,17 +59,7 @@
 #
 # Make sure you change it immediately!
 #
-# version            date              comment
-# 0.1                2017-06-28        initial release
-# 0.2                2017-10-09        minor fixes + internal GIT push
-# 0.3                2017-10-09        minor fixes + public GIT push
-# 0.4                2019-08-14        creating of ssl certs now in prepare.sh
-#                                      simplified nginx startup commands
-# 0.5                2023-02-24        nginx now uses a template + some minor changes
-# 0.6                2023-03-23        switched to postgres 15.2-alpine
 #####################################################################################
-
-#version: '2.0'
 
 # networks
 # create a network 'guacnetwork_compose' in mode 'bridged'
