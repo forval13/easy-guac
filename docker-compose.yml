@@ -2,17 +2,6 @@
 
 
 #
-# (3)
-#  ./nginx/templates folder will be mapped read-only into the container at /etc/nginx/templates
-#  and according to the official nginx container docs the guacamole.conf.template will be
-#  placed in /etc/nginx/conf.d/guacamole.conf after container startup.
-#  ./nginx/ssl will be mapped into the container at /etc/nginx/ssl
-#  prepare.sh creates a a self-signed certificate. If you want to use your own certs
-#  just remove the part that generates the certs from prepare.sh and replace
-#  'self-ssl.key' and 'self.cert' with your certificate.
-#  nginx will export port 8443 to the outside world, make sure that this port is reachable
-#  on your system from the "outside world". All other traffic is only internal.
-#
 #  You could remove the entire 'nginx' service from this file if you want to use your own
 #  reverse proxy in front of guacamole. If doing so, make sure you change the line
 #   from     - 8080/tcp
@@ -118,9 +107,17 @@ services:
    networks:
      guacnetwork_compose:
    ports:
+   #  nginx exports port 8443 to the outside world, all other traffic is only internal.
    - 8443:443
    volumes:
+   #  ./nginx/templates folder will be mapped read-only into the container at /etc/nginx/templates
+   #  and according to the official nginx container docs the guacamole.conf.template will be
+   #  placed in /etc/nginx/conf.d/guacamole.conf after container startup.
    - ./nginx/templates:/etc/nginx/templates:ro
+   #  ./nginx/ssl will be mapped into the container at /etc/nginx/ssl
+   #  prepare.sh creates a a self-signed certificate. If you want to use your own certs
+   #  just remove the part that generates the certs from prepare.sh and replace
+   #  'self-ssl.key' and 'self.cert' with your certificate.
    - ./nginx/ssl/self.cert:/etc/nginx/ssl/self.cert:ro
    - ./nginx/ssl/self-ssl.key:/etc/nginx/ssl/self-ssl.key:ro
    restart: always
