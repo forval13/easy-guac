@@ -15,6 +15,8 @@ docker rm guacd_compose
 docker rm postgres_guacamole_compose
 docker ps -a
 
+docker network rm easy-guac_guacnetwork_compose
+
 # Delete persistent data
 echo "This will delete your existing database (./data/)"
 echo "          delete your recordings        (./record/)"
