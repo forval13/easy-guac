@@ -33,7 +33,7 @@ services:
   postgres:
     container_name: postgres_guacamole_compose
     image: postgres:15.2-alpine
-    env_file: .env
+    #env_file: .env
     environment:
       PGDATA: /var/lib/postgresql/data/guacamole
       POSTGRES_DB: "${POSTGRES_DB}"
@@ -60,7 +60,7 @@ services:
     depends_on:
     - guacd
     - postgres
-    env_file: .env
+    #env_file: .env
     environment:
       GUACD_HOSTNAME: "${GUACD_HOSTNAME}"
       POSTGRES_DATABASE: "${POSTGRES_DATABASE}"
