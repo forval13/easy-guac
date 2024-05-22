@@ -8,7 +8,7 @@ Clone the GIT repository and start guacamole:
 
 ~~~bash
 git clone "https://github.com/forval13/easy-guac.git"
-cd guacamole-docker-compose
+cd easy-guac
 ./init.sh
 docker compose up -d
 ~~~
