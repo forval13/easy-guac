@@ -19,7 +19,7 @@ services:
   # guacd
   # - create a service 'guacd_compose' from 'guacamole/guacd' connected to 'guacnetwork'
   guacd:
-    container_name: guacd_compose
+    container_name: "${GUACD_CONTAINER_NAME}"
     image: guacamole/guacd
     networks:
       guacnetwork_compose:
@@ -31,7 +31,7 @@ services:
   # postgres
   # - create a service 'postgres_guacamole_compose' from 'postgres' connected to 'guacnetwork'
   postgres:
-    container_name: postgres_guacamole_compose
+    container_name: "${POSTGRES_CONTAINER_NAME}"
     image: postgres:15.2-alpine
     #env_file: .env
     environment:
@@ -55,7 +55,7 @@ services:
   # guacamole
   # - create a service 'guacamole_compose' (2)  from 'guacamole/guacamole/' connected to 'guacnetwork'
   guacamole:
-    container_name: guacamole_compose
+    container_name: "${GUACAMOLE_CONTAINER_NAME}"
     image: guacamole/guacamole
     depends_on:
     - guacd
