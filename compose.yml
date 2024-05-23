@@ -84,7 +84,7 @@ services:
    links:
    - guacamole
    networks:
-  - network1
+   - network1
    ports:
    #  nginx exports port 8443 to the outside world, all other traffic is only internal.
    - 8443:443
