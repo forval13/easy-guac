@@ -3,7 +3,7 @@
 # Stop all containers
 echo "docker ps"
 docker ps
-echo""
+echo ""
 echo "This will stop all *_srv containers."
 read -p "Are you sure? " -n 1 -r
 echo ""
@@ -18,7 +18,7 @@ fi
 # Remove all containers
 echo "docker ps -a"
 docker ps -a
-echo""
+echo ""
 echo "This will remove all *_srv containers."
 read -p "Are you sure? " -n 1 -r
 echo ""
@@ -31,9 +31,9 @@ docker ps -a
 fi
 
 # Remove network
-echo"docker network ls"
+echo "docker network ls"
 docker network ls
-echo""
+echo ""
 echo "This will remove '*_srv' networks."
 read -p "Are you sure? " -n 1 -r
 echo ""
