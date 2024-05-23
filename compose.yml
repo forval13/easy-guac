@@ -17,7 +17,6 @@ networks:
 services:
 
   # guacd
-  # - create a service 'guacd_compose' from 'guacamole/guacd' connected to 'guacnetwork'
   guacd:
     container_name: "${GUACD_CONTAINER_NAME}"
     image: guacamole/guacd
@@ -29,14 +28,13 @@ services:
     restart: always
 
   # postgres
-  # - create a service 'postgres_guacamole_compose' from 'postgres' connected to 'guacnetwork'
   postgres:
     container_name: "${POSTGRES_CONTAINER_NAME}"
     image: postgres:15.2-alpine
     #env_file: .env
     environment:
       PGDATA: /var/lib/postgresql/data/guacamole
-      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_DB: "${POSTGRES_DATABASE}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       POSTGRES_USER: "${POSTGRES_USER}"
     networks:
@@ -53,7 +51,6 @@ services:
     restart: always
 
   # guacamole
-  # - create a service 'guacamole_compose' (2)  from 'guacamole/guacamole/' connected to 'guacnetwork'
   guacamole:
     container_name: "${GUACAMOLE_CONTAINER_NAME}"
     image: guacamole/guacamole
@@ -80,9 +77,8 @@ services:
 
 ########### optional ##############
   # nginx
-  # - create a service 'nginx_guacamole_compose' (3) from 'nginx' connected to 'guacnetwork'
   nginx:
-   container_name: nginx_guacamole_compose
+   container_name: "${NGINX_CONTAINER_NAME}"
    image: nginx
    links:
    - guacamole
