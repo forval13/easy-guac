@@ -1,21 +1,45 @@
 #!/bin/bash
 
 # Stop all containers
+echo "docker ps"
 docker ps
-docker stop nginx_guacamole_compose
-docker stop guacamole_compose
-docker stop guacd_compose
-docker stop postgres_guacamole_compose
+echo""
+echo "This will stop all containers."
+read -p "Are you sure? " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+docker stop nginx_srv
+docker stop guacamole_srv
+docker stop guacd_srv
+docker stop postgres_srv
 docker ps
+fi
 
 # Remove all containers
-docker rm nginx_guacamole_compose
-docker rm guacamole_compose
-docker rm guacd_compose
-docker rm postgres_guacamole_compose
+echo "docker ps -a"
 docker ps -a
+echo""
+echo "This will remove all containers."
+read -p "Are you sure? " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+docker rm nginx_srv
+docker rm guacamole_srv
+docker rm guacd_srv
+docker rm postgres_srv
+docker ps -a
+fi
 
-docker network rm easy-guac_guacnetwork_compose
+# Remove network
+echo"docker network ls"
+docker network ls
+echo""
+echo "This will remove all containers."
+read -p "Are you sure? " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+docker network rm easy-guac_guacnetwork_srv
+fi
 
 # Delete persistent data
 echo "This will delete your existing database (./data/)"
