@@ -29,14 +29,14 @@ services:
 
   # postgres
   postgres:
-    container_name: "${POSTGRESQL_CONTAINER_NAME}"
+    container_name: "${POSTGRES_CONTAINER_NAME}"
     image: postgres:15.2-alpine
     #env_file: .env
     environment:
       PGDATA: /var/lib/postgresql/data/guacamole
-      POSTGRESQL_DB: "${POSTGRESQL_DATABASE}"
-      POSTGRESQL_PASSWORD: "${POSTGRESQL_PASSWORD}"
-      POSTGRESQL_USER: "${POSTGRESQL_USER}"
+      POSTGRES_DB: "${POSTGRES_DATABASE}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_USER: "${POSTGRES_USER}"
     networks:
     - network1
     volumes:
@@ -60,10 +60,10 @@ services:
     #env_file: .env
     environment:
       GUACD_HOSTNAME: "${GUACD_HOSTNAME}"
-      POSTGRESQL_DATABASE: "${POSTGRESQL_DATABASE}"
-      POSTGRESQL_HOSTNAME: "${POSTGRESQL_HOSTNAME}"
-      POSTGRESQL_PASSWORD: "${POSTGRESQL_PASSWORD}"
-      POSTGRESQL_USER: "${POSTGRESQL_USER}"
+      POSTGRES_DATABASE: "${POSTGRES_DATABASE}"
+      POSTGRES_HOSTNAME: "${POSTGRES_HOSTNAME}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_USER: "${POSTGRES_USER}"
       #LDAP_HOSTNAME: "${LDAP_HOSTNAME}"
       #LDAP_PORT: "${LDAP_PORT}"
       #LDAP_ENCRYPTION_METHOD: "${LDAP_ENCRYPTION_METHOD}"
