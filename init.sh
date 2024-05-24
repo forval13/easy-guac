@@ -18,6 +18,7 @@ openssl req -nodes -newkey rsa:2048 -new -x509 -keyout nginx/ssl/self-ssl.key -o
 echo "You can use your own certificates by placing the private key in nginx/ssl/self-ssl.key and the cert in nginx/ssl/self.cert"
 echo "done"
 echo ""
+echo ""
 echo "Check 'compose.yml' & '.env' files, then run 'docker compose up -d' command."
 echo "Guacamole server will be available at https://this_server_ip:8443/. The default username is 'guacadmin' with password 'guacadmin'."
 echo ""
