@@ -18,3 +18,5 @@ echo "You can use your own certificates by placing the private key in nginx/ssl/
 echo "done"
 echo "Check 'compose.yml' & '.env' files, then run 'docker compose up -d' command."
 echo "Guacamole server will be available at https://this_server_ip:8443/. The default username is 'guacadmin' with password 'guacadmin'."
+echo ""
+echo ""
