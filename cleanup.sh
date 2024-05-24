@@ -12,6 +12,8 @@ docker stop nginx_srv
 docker stop guacamole_srv
 docker stop guacd_srv
 docker stop postgres_srv
+sleep 3
+echo "docker ps"
 docker ps
 echo ""
 fi
@@ -28,6 +30,8 @@ docker rm nginx_srv
 docker rm guacamole_srv
 docker rm guacd_srv
 docker rm postgres_srv
+sleep 3
+echo "docker ps -a"
 docker ps -a
 echo ""
 fi
@@ -41,6 +45,9 @@ read -p "Are you sure? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 docker network rm guacnetwork_srv
+sleep 3
+echo "docker network ls"
+docker network ls
 echo ""
 fi
 
