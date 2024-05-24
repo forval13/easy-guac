@@ -16,5 +16,5 @@ echo "Creating SSL certificates"
 openssl req -nodes -newkey rsa:2048 -new -x509 -keyout nginx/ssl/self-ssl.key -out nginx/ssl/self.cert -subj '/C=RU/ST=MO/L=MSK/O=Org/OU=IT/CN=www.createyourown.domain/emailAddress=docker@createyourown.domain'
 echo "You can use your own certificates by placing the private key in nginx/ssl/self-ssl.key and the cert in nginx/ssl/self.cert"
 echo "done"
-echo "Check 'docker-compose.yml' file, then run 'docker compose up -d' command."
+echo "Check 'compose.yml' & '.env' files, then run 'docker compose up -d' command."
 echo "Guacamole server will be available at https://this_server_ip:8443/. The default username is 'guacadmin' with password 'guacadmin'."
