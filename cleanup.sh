@@ -4,7 +4,7 @@
 echo "docker ps"
 docker ps
 echo ""
-echo "This will stop all *_srv containers."
+echo "This will stop all '*_srv' containers."
 read -p "Are you sure? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -19,7 +19,7 @@ fi
 echo "docker ps -a"
 docker ps -a
 echo ""
-echo "This will remove all *_srv containers."
+echo "This will remove all '*_srv' containers."
 read -p "Are you sure? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -34,11 +34,11 @@ fi
 echo "docker network ls"
 docker network ls
 echo ""
-echo "This will remove '*_srv' networks."
+echo "This will remove 'guacnetwork_srv' networks."
 read -p "Are you sure? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-docker network rm *_srv
+docker network rm guacnetwork_srv
 fi
 
 # Delete persistent data
