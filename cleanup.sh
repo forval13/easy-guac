@@ -13,6 +13,7 @@ docker stop guacamole_srv
 docker stop guacd_srv
 docker stop postgres_srv
 docker ps
+echo ""
 fi
 
 # Remove all containers
@@ -28,6 +29,7 @@ docker rm guacamole_srv
 docker rm guacd_srv
 docker rm postgres_srv
 docker ps -a
+echo ""
 fi
 
 # Remove network
@@ -39,6 +41,7 @@ read -p "Are you sure? " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 docker network rm guacnetwork_srv
+echo ""
 fi
 
 # Delete persistent data
@@ -52,5 +55,7 @@ echo ""   # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]; then # do dangerous stuff
  chmod -R +x -- ./init
  sudo rm -r -f ./data/ ./drive/ ./record/ ./nginx/ssl/
+ echo ""
 fi
 echo "done"
+echo ""
