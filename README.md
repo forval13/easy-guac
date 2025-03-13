@@ -14,5 +14,5 @@ chmod +x ./init.sh
 docker compose up -d
 ~~~
 
-Your guacamole server should now be available at `https://server_ip:8443/`.  
+Your guacamole server should now be available at `https://server_ip:18443/`.  
 The default username is `guacadmin` with password `guacadmin`.
