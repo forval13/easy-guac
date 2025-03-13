@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Stop all containers
-echo "docker ps"
-docker ps
+echo "docker ps | grep _srv"
+docker ps | grep _srv
 echo ""
 echo "This will stop all '*_srv' containers."
 read -p "Are you sure? " -n 1 -r
