@@ -13,14 +13,14 @@ docker stop guacamole_srv
 docker stop guacd_srv
 docker stop postgres_srv
 sleep 3
-echo "docker ps"
-docker ps
+echo "docker ps | grep _srv"
+docker ps | grep _srv
 echo ""
 fi
 
 # Remove all containers
-echo "docker ps -a"
-docker ps -a
+echo "docker ps -a | grep _srv"
+docker ps -a | grep _srv
 echo ""
 echo "This will remove all '*_srv' containers."
 read -p "Are you sure? " -n 1 -r
@@ -31,8 +31,8 @@ docker rm guacamole_srv
 docker rm guacd_srv
 docker rm postgres_srv
 sleep 3
-echo "docker ps -a"
-docker ps -a
+echo "docker ps -a | grep _srv"
+docker ps -a | grep _srv
 echo ""
 fi
 
