@@ -93,8 +93,8 @@ services:
    networks:
    - network1
    ports:
-   #  nginx exports port 8443 to the outside world, all other traffic is only internal.
-   - 8443:443
+   #  nginx exports port 18443 to the outside world, all other traffic is only internal.
+   - 18443:443
    volumes:
    #  ./nginx/templates folder will be mapped read-only into the container at /etc/nginx/templates
    #  and according to the official nginx container docs the guacamole.conf.template will be
