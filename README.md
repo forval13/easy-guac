@@ -9,6 +9,7 @@ Run the following commands:
 ~~~bash
 git clone "https://github.com/forval13/easy-guac.git"
 cd easy-guac
+chmod +x ./init.sh
 ./init.sh
 docker compose up -d
 ~~~
